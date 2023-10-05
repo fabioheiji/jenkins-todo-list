@@ -41,7 +41,7 @@ RUN pip3 install -r requirements.txt
 
 WORKDIR /usr/src/
 
-COPY jenkins-todo-list /usr/src/jenkins-todo-list
+COPY . /usr/src/jenkins-todo-list
 
 WORKDIR /usr/src/jenkins-todo-list
 
