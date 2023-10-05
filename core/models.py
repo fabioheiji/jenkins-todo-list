@@ -6,7 +6,8 @@ from django.db import models
 class Todo(models.Model):
     title = models.CharField(max_length=200)
     text = models.TextField(blank=True, max_length=280)
-    created_at = models.DateField(default=datetime.now(), blank=True)
+    # created_at = models.DateField(default=datetime.now(), blank=True)
+    created_at = models.DateTimeField(default=datetime.now)
     completed = models.BooleanField(default=False)
     completed_at = models.DateField(blank=True, null=True)
     due_date = models.DateField(blank=True, null=True)

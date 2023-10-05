@@ -1,0 +1,35 @@
+services:
+  db:
+    container_name: mysql
+    build: 
+      context: .
+      dockerfile: Dockerfile-db
+    # NOTE: use of "mysql_native_password" is not recommended: https://dev.mysql.com/doc/refman/8.0/en/upgrading-from-previous-series.html#upgrade-caching-sha2-password
+    # (this is just an example, not intended to be a production configuration)
+    # command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    ports:
+      - '3302:3306'
+    volumes:
+      # - /tmp/app/mysqld:/var/run/mysqld
+      # - ./db:/var/lib/mysql      
+      - mysql_data:/var/lib/mysql
+  
+  todolist:
+    container_name: todo_list
+    build:
+      context: .
+      dockerfile: Dockerfile-todo
+    ports:
+      - "8000:8000"
+    volumes:
+      - todo_home:/var/todo_home
+    depends_on:
+      - db
+
+
+volumes:
+  todo_home:
+    driver: local
+  mysql_data:
+    driver: local
