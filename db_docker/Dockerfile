@@ -2,7 +2,7 @@
 FROM mysql:8.1.0
 # FROM mysql:8.0
 
-# USER root
+USER root
 # Copy the SQL file to /docker-entrypoint-initdb.d
 # COPY script.sql /docker-entrypoint-initdb.d/
 RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
