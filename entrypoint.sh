@@ -2,7 +2,7 @@
 
 set -e
 
-echo "running makemigrations."
+echo "running testes."
 python3 check_db.py --service-name mysql --ip db --port 3306
 
 echo "running makemigrations."
