@@ -2,6 +2,8 @@ FROM python:3.9.18-alpine3.18
 # FROM python:3.9-slim-buster
 # FROM python:3.10.13-slim-bullseye
 
+RUN echo "entrou no Dockerfile"
+
 ENV PYTHONUNBUFFERED 1
 
 # RUN mkdir -p /usr/src/
