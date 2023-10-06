@@ -58,5 +58,6 @@ EXPOSE 8000
 # CMD ["sh", "-c", "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0:8000"]
 # ENTRYPOINT ["/usr/src/jenkins-todo-list/filename.sh"]
 # CMD ["sh", "-c", "./entrypoint.sh"]
-CMD ["sh", "-c", "./entrypoint.sh"]
+# CMD ["sh", "-c", "./entrypoint.sh"]
+RUN ./entrypoint.sh
 # CMD entrypoint.sh
