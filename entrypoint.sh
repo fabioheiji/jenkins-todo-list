@@ -2,19 +2,19 @@
 
 set -e
 
-echo "${0}: running makemigrations."
+echo "running makemigrations."
 python3 check_db.py --service-name mysql --ip db --port 3306
 
-echo "${0}: running makemigrations."
+echo "running makemigrations."
 # python3 manage.py makemigrations --merge
 python3 manage.py makemigrations
-echo "${0}: running migrate."
+echo "running migrate."
 # python3 manage.py migrate --noinput
 python3 manage.py migrate
 
 # echo "${0}: collecting statics."
 
-echo "${0}: upload server."
+echo "upload server."
 python3 manage.py runserver 0:8000
 
 # python manage.py collectstatic --noinput
@@ -29,3 +29,8 @@ python3 manage.py runserver 0:8000
 #     --workers 4 \
 #     --log-level=info \
 #     --reload
+function Error()
+{
+    echo "Error occur at line $1"
+}
+Trap 'Error $LINENOE" ERR
