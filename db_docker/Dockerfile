@@ -15,3 +15,5 @@ ENV MYSQL_HOST='127.0.0.1'
 # Expose port 3306 for the mysql server
 
 EXPOSE 3306
+
+ENTRYPOINT ["docker-entrypoint.sh"]
