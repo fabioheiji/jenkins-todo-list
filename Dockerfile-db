@@ -1,7 +1,7 @@
 # Use mysql as the base image
 FROM mysql:8.0
 
-# USER root
+USER root
 # Copy the SQL file to /docker-entrypoint-initdb.d
 # COPY script.sql /docker-entrypoint-initdb.d/
 
