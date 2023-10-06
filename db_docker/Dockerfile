@@ -4,7 +4,8 @@ FROM mysql:8.0
 # USER root
 # Copy the SQL file to /docker-entrypoint-initdb.d
 # COPY script.sql /docker-entrypoint-initdb.d/
-
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
+    && ln -s /usr/local/bin/docker-entrypoint.sh /
 # Set the environment variables for the mysql server
 ENV MYSQL_ROOT_PASSWORD=mestre
 ENV MYSQL_DATABASE=todo
