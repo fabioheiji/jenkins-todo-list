@@ -23,7 +23,7 @@ python manage.py collectstatic --noinput
 
 cp -rv static/* static_shared/
 
-gunicorn to_do.wsgi:application --bind 0.0.0.0:8000 --workers 3
+gunicorn to_do.wsgi:application --bind 0.0.0.0:8000 --workers 3 --daemon
 
 function Error()
 {
