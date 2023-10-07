@@ -23,14 +23,8 @@ python manage.py collectstatic --noinput
 
 cp -rv static/* static_shared/
 
-gunicorn yourapp.wsgi:application \
-    --env DJANGO_SETTINGS_MODULE=yourapp.production_settings \
-    --name yourapp \
-    --bind 0.0.0.0:8000 \
-    --timeout 600 \
-    --workers 4 \
-    --log-level=info \
-    --reload
+gunicorn to_do.wsgi:application --bind 0.0.0.0:8000 --workers 3
+
 function Error()
 {
     echo "Error occur at line $1"
