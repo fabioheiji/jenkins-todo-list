@@ -63,5 +63,5 @@ EXPOSE 8000
 # ENTRYPOINT ["/usr/src/jenkins-todo-list/filename.sh"]
 # CMD ["sh", "-c", "./entrypoint.sh"]
 # CMD ["sh", "-c", "./entrypoint.sh"]
-RUN ./entrypoint.sh
+RUN ./entrypoint.sh ARG_DOCKER_IP_mysql_container
 # CMD entrypoint.sh

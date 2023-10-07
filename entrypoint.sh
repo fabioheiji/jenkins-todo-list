@@ -5,7 +5,7 @@ set -e
 echo "running testes."
 echo ${IP_MYSQL}
 # python3 check_db.py --service-name mysql --ip db --port 3306
-python3 check_db.py --service-name mysql --ip ${IP_MYSQL} --port 3306
+python3 check_db.py --service-name mysql --ip $1 --port 3306
 
 echo "running makemigrations."
 # python3 manage.py makemigrations --merge
