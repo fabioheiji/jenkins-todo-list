@@ -38,12 +38,12 @@ RUN set -e; \
                 libpng-dev \
                 g++;
 
-COPY ../requirements.txt requirements.txt
+COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
 WORKDIR /usr/src/
 
-COPY ../ /usr/src/jenkins-todo-list
+COPY . /usr/src/jenkins-todo-list
 
 WORKDIR /usr/src/jenkins-todo-list
 
