@@ -2,9 +2,11 @@ FROM python:3.9.18-alpine3.18
 # FROM python:3.9-slim-buster
 # FROM python:3.10.13-slim-bullseye
 
+ARG ARG_DOCKER_IP_mysql_container
+
 RUN echo "entrou no Dockerfile"
 
-RUN echo ${DOCKER_IP_mysql_container}
+RUN echo ${ARG_DOCKER_IP_mysql_container}
 
 ENV PYTHONUNBUFFERED 1
 
