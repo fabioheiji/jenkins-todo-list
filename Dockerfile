@@ -65,3 +65,5 @@ EXPOSE 8000
 # CMD ["sh", "-c", "./entrypoint.sh"]
 RUN ./entrypoint.sh ARG_DOCKER_IP_mysql_container
 # CMD entrypoint.sh
+
+CMD ["gunicorn", "to_do.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "3"]
