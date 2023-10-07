@@ -24,7 +24,7 @@ python manage.py collectstatic --noinput
 echo "copying some files"
 cp -rv static/* static_shared/
 
-# echo "upload server."
+echo "exiting entrypoint"
 # gunicorn to_do.wsgi:application --bind 0.0.0.0:8000 --workers 3 --daemon
 
 # echo "server up"
