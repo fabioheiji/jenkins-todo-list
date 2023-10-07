@@ -3,6 +3,7 @@
 set -e
 
 echo "running testes."
+echo ${IP_MYSQL}
 # python3 check_db.py --service-name mysql --ip db --port 3306
 python3 check_db.py --service-name mysql --ip ${IP_MYSQL} --port 3306
 
