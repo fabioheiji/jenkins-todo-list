@@ -4,6 +4,8 @@ FROM python:3.9.18-alpine3.18
 
 RUN echo "entrou no Dockerfile"
 
+RUN echo ${DOCKER_IP_mysql_container}
+
 ENV PYTHONUNBUFFERED 1
 
 # RUN mkdir -p /usr/src/
